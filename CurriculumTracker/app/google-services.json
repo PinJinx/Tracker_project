@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "135831475562",
+    "project_id": "amtracker-5c50f",
+    "storage_bucket": "amtracker-5c50f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:135831475562:android:3ff7ad3afaf1e9adff0113",
+        "android_client_info": {
+          "package_name": "com.example.curriculumtracker"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLuBh2GwZdph8bzHwyHpyWoZ2zaD0HXGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
