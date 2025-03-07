@@ -1,62 +1,62 @@
-com.example.curriculumtracker.app-pngs-0 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/build/generated/res/pngs/debug
-com.example.curriculumtracker.app-res-1 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/build/generated/res/processDebugGoogleServices
-com.example.curriculumtracker.app-resValues-2 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/build/generated/res/resValues/debug
-com.example.curriculumtracker.app-packageDebugResources-3 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-com.example.curriculumtracker.app-packageDebugResources-4 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-com.example.curriculumtracker.app-debug-5 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/build/intermediates/merged_res/debug/mergeDebugResources
-com.example.curriculumtracker.app-debug-6 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/src/debug/res
-com.example.curriculumtracker.app-main-7 /home/rohithspc/Documents/Mobile Track/Flutter/CurriculumTracker/app/src/main/res
-com.example.curriculumtracker.app-lifecycle-livedata-core-ktx-2.8.3-8 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/05588916d936e064cbba70246d1ae948/transformed/lifecycle-livedata-core-ktx-2.8.3/res
-com.example.curriculumtracker.app-lifecycle-livedata-core-2.8.3-9 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/06a9b252915c991f822838e773c70445/transformed/lifecycle-livedata-core-2.8.3/res
-com.example.curriculumtracker.app-savedstate-1.2.1-10 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/09b7d90d9105fc26e48320a4b6e7f831/transformed/savedstate-1.2.1/res
-com.example.curriculumtracker.app-lifecycle-viewmodel-savedstate-2.8.3-11 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/0d8521f63183916deac7346b67968b1d/transformed/lifecycle-viewmodel-savedstate-2.8.3/res
-com.example.curriculumtracker.app-lifecycle-runtime-compose-release-12 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/0e19551765df1b92c90acd100387c930/transformed/lifecycle-runtime-compose-release/res
-com.example.curriculumtracker.app-emoji2-1.3.0-13 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/1770abf4fd3b286642fd2797fab6b9d6/transformed/emoji2-1.3.0/res
-com.example.curriculumtracker.app-material-ripple-release-14 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/2a10b25451dde40b8b39532b87aa2443/transformed/material-ripple-release/res
-com.example.curriculumtracker.app-credentials-1.2.0-rc01-15 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/2bcc0b0108999cc68b880cb41334ef2b/transformed/credentials-1.2.0-rc01/res
-com.example.curriculumtracker.app-lifecycle-runtime-release-16 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/2c93284175291f72dc29bfbe15a36c4d/transformed/lifecycle-runtime-release/res
-com.example.curriculumtracker.app-ui-tooling-release-17 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/314af57e30f2e97c2ef2c6fc18358ef0/transformed/ui-tooling-release/res
-com.example.curriculumtracker.app-runtime-saveable-release-18 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/334b9abcf90a562906bb535cb4ba0269/transformed/runtime-saveable-release/res
-com.example.curriculumtracker.app-activity-1.8.0-19 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/35e29ca14dbb331887c2059018ac42ee/transformed/activity-1.8.0/res
-com.example.curriculumtracker.app-profileinstaller-1.3.1-20 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/3cce3dff9976bf4262c952ba1f8c6872/transformed/profileinstaller-1.3.1/res
-com.example.curriculumtracker.app-lifecycle-livedata-2.8.3-21 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/3e24cc45a4a3fced0eed303e2fff23ae/transformed/lifecycle-livedata-2.8.3/res
-com.example.curriculumtracker.app-savedstate-ktx-1.2.1-22 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/413942c0f3e35cc552d905d65352800d/transformed/savedstate-ktx-1.2.1/res
-com.example.curriculumtracker.app-material-release-23 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/5114a7c9fcebe100db519881757fc992/transformed/material-release/res
-com.example.curriculumtracker.app-animation-core-release-24 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/580546037eb958212ebdd33e76e19250/transformed/animation-core-release/res
-com.example.curriculumtracker.app-play-services-basement-18.5.0-25 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/64123aa1bbfd88e28b4b99c5c68b4cae/transformed/play-services-basement-18.5.0/res
-com.example.curriculumtracker.app-lifecycle-viewmodel-ktx-2.8.3-26 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/664bb3d6390bdef5ef0a5b1ac5d328a5/transformed/lifecycle-viewmodel-ktx-2.8.3/res
-com.example.curriculumtracker.app-startup-runtime-1.1.1-27 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/666ab63860c0f519effe0e1e99b2c03c/transformed/startup-runtime-1.1.1/res
-com.example.curriculumtracker.app-ui-text-release-28 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/799fa36eaa44e1e389a077552e61732f/transformed/ui-text-release/res
-com.example.curriculumtracker.app-runtime-release-29 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/79ef679d67ff15b2e75d899d97ce5437/transformed/runtime-release/res
-com.example.curriculumtracker.app-foundation-release-30 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/7cda8483b372723b9ac4afaf225d6e96/transformed/foundation-release/res
-com.example.curriculumtracker.app-ui-release-31 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/84ac4cc4c576a122a915ffbdaa1fddd0/transformed/ui-release/res
-com.example.curriculumtracker.app-customview-poolingcontainer-1.0.0-32 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/873caeb66674c947bccc387d10830d7f/transformed/customview-poolingcontainer-1.0.0/res
-com.example.curriculumtracker.app-material-icons-core-release-33 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/87735c29eb2d74a521b30d4c2b4158e3/transformed/material-icons-core-release/res
-com.example.curriculumtracker.app-play-services-base-18.5.0-34 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/98d73c67af86389699ce2c78f7e05c66/transformed/play-services-base-18.5.0/res
-com.example.curriculumtracker.app-animation-release-35 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/9f9649616bfdc1122f4f42761da1266d/transformed/animation-release/res
-com.example.curriculumtracker.app-lifecycle-process-2.8.3-36 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/a3b7f1daf761b09a7a0e9fe350661c39/transformed/lifecycle-process-2.8.3/res
-com.example.curriculumtracker.app-firebase-common-21.0.0-37 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/a600ab8ca6171cef1a7a0bf6f851f92a/transformed/firebase-common-21.0.0/res
-com.example.curriculumtracker.app-ui-util-release-38 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/a669ec86ccda6e06785af15557d5041a/transformed/ui-util-release/res
-com.example.curriculumtracker.app-ads-adservices-java-1.1.0-beta11-39 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/a6abc9a0548e7138b8adbd1ab6c3d4b0/transformed/ads-adservices-java-1.1.0-beta11/res
-com.example.curriculumtracker.app-credentials-play-services-auth-1.2.0-rc01-40 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/a8ae2d57da7bf43db819ea2b8d26b10f/transformed/credentials-play-services-auth-1.2.0-rc01/res
-com.example.curriculumtracker.app-ui-unit-release-41 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/aa28c172a0aa2d19f6f4195426f1b784/transformed/ui-unit-release/res
-com.example.curriculumtracker.app-core-ktx-1.12.0-42 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/aaf1fae790f5e350acb57f6a77bff208/transformed/core-ktx-1.12.0/res
-com.example.curriculumtracker.app-play-services-auth-20.7.0-43 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/ab01f49a108fdc49e5ded931942987f4/transformed/play-services-auth-20.7.0/res
-com.example.curriculumtracker.app-lifecycle-runtime-ktx-release-44 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/afb21dc56fba067faafd4b2ab14bd469/transformed/lifecycle-runtime-ktx-release/res
-com.example.curriculumtracker.app-runtime-livedata-1.7.8-45 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/b4dd926ce1c77dbf538b00e5015a6eec/transformed/runtime-livedata-1.7.8/res
-com.example.curriculumtracker.app-core-1.12.0-46 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/b53438a55f883ca3f7a024473397e09e/transformed/core-1.12.0/res
-com.example.curriculumtracker.app-ui-test-manifest-1.6.6-47 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/b78f579bafea8ebc6c40204093845e43/transformed/ui-test-manifest-1.6.6/res
-com.example.curriculumtracker.app-ui-geometry-release-48 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/b7b1de6e3973248a2a7c17869599ed6a/transformed/ui-geometry-release/res
-com.example.curriculumtracker.app-lifecycle-viewmodel-release-49 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/c26d976f8245b626a266e4f04f542394/transformed/lifecycle-viewmodel-release/res
-com.example.curriculumtracker.app-annotation-experimental-1.4.1-50 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/c66386314e0b5ce261d63f40d439c956/transformed/annotation-experimental-1.4.1/res
-com.example.curriculumtracker.app-ui-graphics-release-51 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/d21c9524af58108d4a058e9322d23863/transformed/ui-graphics-release/res
-com.example.curriculumtracker.app-activity-ktx-1.8.0-52 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/d7f30a51fdc59105deb3b8da89e626e5/transformed/activity-ktx-1.8.0/res
-com.example.curriculumtracker.app-ads-adservices-1.1.0-beta11-53 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/d8f2a03fb7196b3661fb4a7e9ece2bdf/transformed/ads-adservices-1.1.0-beta11/res
-com.example.curriculumtracker.app-foundation-layout-release-54 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/db12cad5d0849a52bd3ff5af679660a3/transformed/foundation-layout-release/res
-com.example.curriculumtracker.app-core-common-2.0.3-55 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/db6677dd58d7b424862b56b1dfc2e0b0/transformed/core-common-2.0.3/res
-com.example.curriculumtracker.app-browser-1.4.0-56 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/e378eaab752f6708e688402781d324ce/transformed/browser-1.4.0/res
-com.example.curriculumtracker.app-activity-compose-1.8.0-57 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/e6acba4aa5576b70b3edf15691ae6a31/transformed/activity-compose-1.8.0/res
-com.example.curriculumtracker.app-ui-tooling-data-release-58 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/f0469e200cfbdb1ff967664a128384e5/transformed/ui-tooling-data-release/res
-com.example.curriculumtracker.app-ui-tooling-preview-release-59 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/f39ef59fea58032d304c7a975b10c4c5/transformed/ui-tooling-preview-release/res
-com.example.curriculumtracker.app-core-runtime-2.2.0-60 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/f870976ef87024a1b4883be4f76a4259/transformed/core-runtime-2.2.0/res
-com.example.curriculumtracker.app-material3-release-61 /home/rohithspc/Documents/Mobile Track/Flutter/mynotes/gradle/caches/8.10.2/transforms/feb10208e213b70be9b47ca13789f451/transformed/material3-release/res
+com.example.curriculumtracker.app-lifecycle-livedata-core-ktx-2.8.3-0 /home/aadarsh/.gradle/caches/8.10.2/transforms/05588916d936e064cbba70246d1ae948/transformed/lifecycle-livedata-core-ktx-2.8.3/res
+com.example.curriculumtracker.app-lifecycle-livedata-core-2.8.3-1 /home/aadarsh/.gradle/caches/8.10.2/transforms/06a9b252915c991f822838e773c70445/transformed/lifecycle-livedata-core-2.8.3/res
+com.example.curriculumtracker.app-savedstate-1.2.1-2 /home/aadarsh/.gradle/caches/8.10.2/transforms/09b7d90d9105fc26e48320a4b6e7f831/transformed/savedstate-1.2.1/res
+com.example.curriculumtracker.app-lifecycle-viewmodel-savedstate-2.8.3-3 /home/aadarsh/.gradle/caches/8.10.2/transforms/0d8521f63183916deac7346b67968b1d/transformed/lifecycle-viewmodel-savedstate-2.8.3/res
+com.example.curriculumtracker.app-lifecycle-runtime-compose-release-4 /home/aadarsh/.gradle/caches/8.10.2/transforms/0e19551765df1b92c90acd100387c930/transformed/lifecycle-runtime-compose-release/res
+com.example.curriculumtracker.app-emoji2-1.3.0-5 /home/aadarsh/.gradle/caches/8.10.2/transforms/1770abf4fd3b286642fd2797fab6b9d6/transformed/emoji2-1.3.0/res
+com.example.curriculumtracker.app-material-ripple-release-6 /home/aadarsh/.gradle/caches/8.10.2/transforms/2a10b25451dde40b8b39532b87aa2443/transformed/material-ripple-release/res
+com.example.curriculumtracker.app-credentials-1.2.0-rc01-7 /home/aadarsh/.gradle/caches/8.10.2/transforms/2bcc0b0108999cc68b880cb41334ef2b/transformed/credentials-1.2.0-rc01/res
+com.example.curriculumtracker.app-lifecycle-runtime-release-8 /home/aadarsh/.gradle/caches/8.10.2/transforms/2c93284175291f72dc29bfbe15a36c4d/transformed/lifecycle-runtime-release/res
+com.example.curriculumtracker.app-ui-tooling-release-9 /home/aadarsh/.gradle/caches/8.10.2/transforms/314af57e30f2e97c2ef2c6fc18358ef0/transformed/ui-tooling-release/res
+com.example.curriculumtracker.app-runtime-saveable-release-10 /home/aadarsh/.gradle/caches/8.10.2/transforms/334b9abcf90a562906bb535cb4ba0269/transformed/runtime-saveable-release/res
+com.example.curriculumtracker.app-activity-1.8.0-11 /home/aadarsh/.gradle/caches/8.10.2/transforms/35e29ca14dbb331887c2059018ac42ee/transformed/activity-1.8.0/res
+com.example.curriculumtracker.app-profileinstaller-1.3.1-12 /home/aadarsh/.gradle/caches/8.10.2/transforms/3cce3dff9976bf4262c952ba1f8c6872/transformed/profileinstaller-1.3.1/res
+com.example.curriculumtracker.app-lifecycle-livedata-2.8.3-13 /home/aadarsh/.gradle/caches/8.10.2/transforms/3e24cc45a4a3fced0eed303e2fff23ae/transformed/lifecycle-livedata-2.8.3/res
+com.example.curriculumtracker.app-savedstate-ktx-1.2.1-14 /home/aadarsh/.gradle/caches/8.10.2/transforms/413942c0f3e35cc552d905d65352800d/transformed/savedstate-ktx-1.2.1/res
+com.example.curriculumtracker.app-material-release-15 /home/aadarsh/.gradle/caches/8.10.2/transforms/5114a7c9fcebe100db519881757fc992/transformed/material-release/res
+com.example.curriculumtracker.app-animation-core-release-16 /home/aadarsh/.gradle/caches/8.10.2/transforms/580546037eb958212ebdd33e76e19250/transformed/animation-core-release/res
+com.example.curriculumtracker.app-play-services-basement-18.5.0-17 /home/aadarsh/.gradle/caches/8.10.2/transforms/64123aa1bbfd88e28b4b99c5c68b4cae/transformed/play-services-basement-18.5.0/res
+com.example.curriculumtracker.app-lifecycle-viewmodel-ktx-2.8.3-18 /home/aadarsh/.gradle/caches/8.10.2/transforms/664bb3d6390bdef5ef0a5b1ac5d328a5/transformed/lifecycle-viewmodel-ktx-2.8.3/res
+com.example.curriculumtracker.app-startup-runtime-1.1.1-19 /home/aadarsh/.gradle/caches/8.10.2/transforms/666ab63860c0f519effe0e1e99b2c03c/transformed/startup-runtime-1.1.1/res
+com.example.curriculumtracker.app-ui-text-release-20 /home/aadarsh/.gradle/caches/8.10.2/transforms/799fa36eaa44e1e389a077552e61732f/transformed/ui-text-release/res
+com.example.curriculumtracker.app-runtime-release-21 /home/aadarsh/.gradle/caches/8.10.2/transforms/79ef679d67ff15b2e75d899d97ce5437/transformed/runtime-release/res
+com.example.curriculumtracker.app-foundation-release-22 /home/aadarsh/.gradle/caches/8.10.2/transforms/7cda8483b372723b9ac4afaf225d6e96/transformed/foundation-release/res
+com.example.curriculumtracker.app-ui-release-23 /home/aadarsh/.gradle/caches/8.10.2/transforms/84ac4cc4c576a122a915ffbdaa1fddd0/transformed/ui-release/res
+com.example.curriculumtracker.app-customview-poolingcontainer-1.0.0-24 /home/aadarsh/.gradle/caches/8.10.2/transforms/873caeb66674c947bccc387d10830d7f/transformed/customview-poolingcontainer-1.0.0/res
+com.example.curriculumtracker.app-material-icons-core-release-25 /home/aadarsh/.gradle/caches/8.10.2/transforms/87735c29eb2d74a521b30d4c2b4158e3/transformed/material-icons-core-release/res
+com.example.curriculumtracker.app-play-services-base-18.5.0-26 /home/aadarsh/.gradle/caches/8.10.2/transforms/98d73c67af86389699ce2c78f7e05c66/transformed/play-services-base-18.5.0/res
+com.example.curriculumtracker.app-animation-release-27 /home/aadarsh/.gradle/caches/8.10.2/transforms/9f9649616bfdc1122f4f42761da1266d/transformed/animation-release/res
+com.example.curriculumtracker.app-lifecycle-process-2.8.3-28 /home/aadarsh/.gradle/caches/8.10.2/transforms/a3b7f1daf761b09a7a0e9fe350661c39/transformed/lifecycle-process-2.8.3/res
+com.example.curriculumtracker.app-firebase-common-21.0.0-29 /home/aadarsh/.gradle/caches/8.10.2/transforms/a600ab8ca6171cef1a7a0bf6f851f92a/transformed/firebase-common-21.0.0/res
+com.example.curriculumtracker.app-ui-util-release-30 /home/aadarsh/.gradle/caches/8.10.2/transforms/a669ec86ccda6e06785af15557d5041a/transformed/ui-util-release/res
+com.example.curriculumtracker.app-ads-adservices-java-1.1.0-beta11-31 /home/aadarsh/.gradle/caches/8.10.2/transforms/a6abc9a0548e7138b8adbd1ab6c3d4b0/transformed/ads-adservices-java-1.1.0-beta11/res
+com.example.curriculumtracker.app-credentials-play-services-auth-1.2.0-rc01-32 /home/aadarsh/.gradle/caches/8.10.2/transforms/a8ae2d57da7bf43db819ea2b8d26b10f/transformed/credentials-play-services-auth-1.2.0-rc01/res
+com.example.curriculumtracker.app-ui-unit-release-33 /home/aadarsh/.gradle/caches/8.10.2/transforms/aa28c172a0aa2d19f6f4195426f1b784/transformed/ui-unit-release/res
+com.example.curriculumtracker.app-core-ktx-1.12.0-34 /home/aadarsh/.gradle/caches/8.10.2/transforms/aaf1fae790f5e350acb57f6a77bff208/transformed/core-ktx-1.12.0/res
+com.example.curriculumtracker.app-play-services-auth-20.7.0-35 /home/aadarsh/.gradle/caches/8.10.2/transforms/ab01f49a108fdc49e5ded931942987f4/transformed/play-services-auth-20.7.0/res
+com.example.curriculumtracker.app-lifecycle-runtime-ktx-release-36 /home/aadarsh/.gradle/caches/8.10.2/transforms/afb21dc56fba067faafd4b2ab14bd469/transformed/lifecycle-runtime-ktx-release/res
+com.example.curriculumtracker.app-runtime-livedata-1.7.8-37 /home/aadarsh/.gradle/caches/8.10.2/transforms/b4dd926ce1c77dbf538b00e5015a6eec/transformed/runtime-livedata-1.7.8/res
+com.example.curriculumtracker.app-core-1.12.0-38 /home/aadarsh/.gradle/caches/8.10.2/transforms/b53438a55f883ca3f7a024473397e09e/transformed/core-1.12.0/res
+com.example.curriculumtracker.app-ui-test-manifest-1.6.6-39 /home/aadarsh/.gradle/caches/8.10.2/transforms/b78f579bafea8ebc6c40204093845e43/transformed/ui-test-manifest-1.6.6/res
+com.example.curriculumtracker.app-ui-geometry-release-40 /home/aadarsh/.gradle/caches/8.10.2/transforms/b7b1de6e3973248a2a7c17869599ed6a/transformed/ui-geometry-release/res
+com.example.curriculumtracker.app-lifecycle-viewmodel-release-41 /home/aadarsh/.gradle/caches/8.10.2/transforms/c26d976f8245b626a266e4f04f542394/transformed/lifecycle-viewmodel-release/res
+com.example.curriculumtracker.app-annotation-experimental-1.4.1-42 /home/aadarsh/.gradle/caches/8.10.2/transforms/c66386314e0b5ce261d63f40d439c956/transformed/annotation-experimental-1.4.1/res
+com.example.curriculumtracker.app-ui-graphics-release-43 /home/aadarsh/.gradle/caches/8.10.2/transforms/d21c9524af58108d4a058e9322d23863/transformed/ui-graphics-release/res
+com.example.curriculumtracker.app-activity-ktx-1.8.0-44 /home/aadarsh/.gradle/caches/8.10.2/transforms/d7f30a51fdc59105deb3b8da89e626e5/transformed/activity-ktx-1.8.0/res
+com.example.curriculumtracker.app-ads-adservices-1.1.0-beta11-45 /home/aadarsh/.gradle/caches/8.10.2/transforms/d8f2a03fb7196b3661fb4a7e9ece2bdf/transformed/ads-adservices-1.1.0-beta11/res
+com.example.curriculumtracker.app-foundation-layout-release-46 /home/aadarsh/.gradle/caches/8.10.2/transforms/db12cad5d0849a52bd3ff5af679660a3/transformed/foundation-layout-release/res
+com.example.curriculumtracker.app-core-common-2.0.3-47 /home/aadarsh/.gradle/caches/8.10.2/transforms/db6677dd58d7b424862b56b1dfc2e0b0/transformed/core-common-2.0.3/res
+com.example.curriculumtracker.app-browser-1.4.0-48 /home/aadarsh/.gradle/caches/8.10.2/transforms/e378eaab752f6708e688402781d324ce/transformed/browser-1.4.0/res
+com.example.curriculumtracker.app-activity-compose-1.8.0-49 /home/aadarsh/.gradle/caches/8.10.2/transforms/e6acba4aa5576b70b3edf15691ae6a31/transformed/activity-compose-1.8.0/res
+com.example.curriculumtracker.app-ui-tooling-data-release-50 /home/aadarsh/.gradle/caches/8.10.2/transforms/f0469e200cfbdb1ff967664a128384e5/transformed/ui-tooling-data-release/res
+com.example.curriculumtracker.app-ui-tooling-preview-release-51 /home/aadarsh/.gradle/caches/8.10.2/transforms/f39ef59fea58032d304c7a975b10c4c5/transformed/ui-tooling-preview-release/res
+com.example.curriculumtracker.app-core-runtime-2.2.0-52 /home/aadarsh/.gradle/caches/8.10.2/transforms/f870976ef87024a1b4883be4f76a4259/transformed/core-runtime-2.2.0/res
+com.example.curriculumtracker.app-material3-release-53 /home/aadarsh/.gradle/caches/8.10.2/transforms/feb10208e213b70be9b47ca13789f451/transformed/material3-release/res
+com.example.curriculumtracker.app-pngs-54 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/build/generated/res/pngs/debug
+com.example.curriculumtracker.app-res-55 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/build/generated/res/processDebugGoogleServices
+com.example.curriculumtracker.app-resValues-56 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/build/generated/res/resValues/debug
+com.example.curriculumtracker.app-packageDebugResources-57 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+com.example.curriculumtracker.app-packageDebugResources-58 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+com.example.curriculumtracker.app-debug-59 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.curriculumtracker.app-debug-60 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/src/debug/res
+com.example.curriculumtracker.app-main-61 /home/aadarsh/Developer/Tracker_project/CurriculumTracker/app/src/main/res

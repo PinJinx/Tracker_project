@@ -11,6 +11,8 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -21,9 +23,14 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DashboardScreen(onNavigateToUserActivity: () -> Unit,onNavbar: (String) -> Unit,setTrack: (String) -> Unit) {
+fun DashboardScreen(
+    onNavigateToUserActivity: () -> Unit,
+    onNavbar: (String) -> Unit,
+    setTrack: (String) -> Unit
+) {
     var selectedPage by remember { mutableStateOf(0) }
 
     Scaffold(
@@ -39,7 +46,7 @@ fun DashboardScreen(onNavigateToUserActivity: () -> Unit,onNavbar: (String) -> U
                 ) {
                     NavigationBarItem(
                         selected = selectedPage == 0,
-                        onClick = { selectedPage = 0;onNavbar("dashboard") },
+                        onClick = { selectedPage = 0; onNavbar("dashboard") },
                         label = { Text("Dashboard", color = Color.White) },
                         icon = {
                             Icon(
@@ -58,7 +65,7 @@ fun DashboardScreen(onNavigateToUserActivity: () -> Unit,onNavbar: (String) -> U
                     )
                     NavigationBarItem(
                         selected = selectedPage == 1,
-                        onClick = { selectedPage = 1;onNavbar("updates") },
+                        onClick = { selectedPage = 1; onNavbar("updates") },
                         label = { Text("My Updates", color = Color.White) },
                         icon = {
                             Icon(
@@ -93,14 +100,14 @@ fun DashboardScreen(onNavigateToUserActivity: () -> Unit,onNavbar: (String) -> U
                 .padding(16.dp),
         ) {
             Text("Tracks", fontSize = 36.sp, fontWeight = FontWeight.Bold, color = Color.White, modifier = Modifier.padding(vertical = 20.dp))
+
             val tracks: List<Pair<String, Int>> = listOf(
-                "Mobile" to android.R.drawable.ic_menu_gallery,
-                "AI" to android.R.drawable.ic_menu_gallery,
-                "Web" to android.R.drawable.ic_menu_gallery,
-                "System" to android.R.drawable.ic_menu_gallery
+                "Mobile" to R.drawable.mobile_icon,
+                "AI" to R.drawable.ai_icon,
+                "Web" to R.drawable.web_icon,
+                "System" to R.drawable.system_icon
             )
 
-            // Display buttons in a grid layout with modern styling
             Column {
                 tracks.chunked(2).forEach { rowItems ->
                     Row(
@@ -112,7 +119,7 @@ fun DashboardScreen(onNavigateToUserActivity: () -> Unit,onNavbar: (String) -> U
                                 text = text,
                                 imageRes = image,
                                 modifier = Modifier.weight(1f),
-                                onClick = { onNavigateToUserActivity(); setTrack(text) } // Navigate to UserActivityScreen
+                                onClick = { onNavigateToUserActivity(); setTrack(text) }
                             )
                         }
                     }
@@ -129,32 +136,28 @@ fun DashboardButton(
     modifier: Modifier = Modifier,
     onClick: () -> Unit
 ) {
-    Card(
+    Box(
         modifier = modifier
+            .aspectRatio(1f)
             .padding(8.dp)
-            .clickable { onClick() },
-        shape = RoundedCornerShape(24.dp), // Rounded corners for modern style
-        colors = CardDefaults.cardColors(containerColor = Color(0xFFFFC107)) // Yellow background
+            .clickable(onClick = onClick)
+            .background(Color.Black, RoundedCornerShape(8.dp))
+            .clip(RoundedCornerShape(16.dp)) // Add corner radius
     ) {
-        Column(
-            modifier = Modifier.padding(16.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(
-                painter = painterResource(id = imageRes),
-                contentDescription = text,
-                modifier = Modifier
-                    .size(50.dp)
-                    .padding(bottom = 8.dp),
-                contentScale = ContentScale.Fit
-            )
-            Text(
-                text = text,
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.Black // Black text for contrast
-            )
-        }
+        Image(
+            painter = painterResource(id = imageRes),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier
+                .fillMaxSize()
+                .graphicsLayer { alpha = 0.5f } // Set opacity to 50%
+        )
+        Text(
+            text = text,
+            fontSize = 16.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            modifier = Modifier.align(Alignment.Center)
+        )
     }
 }
-
