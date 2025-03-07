@@ -1,5 +1,4 @@
 package com.example.curriculumtracker
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -11,8 +10,6 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -20,18 +17,76 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.VerticalAlignmentLine
+import android.util.Log
+import androidx.compose.material.icons.filled.Close
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 
 
+private fun parseFirestoreData(
+    document: com.google.firebase.firestore.DocumentSnapshot,
+    namesField: String,
+    weeksField: String,
+    progressField: String
+): List<Triple<String, String, Float>> {
+    val names = (document.get(namesField) as? List<*>)?.filterIsInstance<String>() ?: emptyList()
+    val weeks = (document.get(weeksField) as? List<*>)?.filterIsInstance<Number>()?.map { "Week ${it.toInt()}" } ?: emptyList()
+    val progress = (document.get(progressField) as? List<*>)?.filterIsInstance<Double>() ?: emptyList()
+
+    return names.mapIndexed { index, name ->
+        Triple(
+            name,
+            weeks.getOrNull(index) ?: "Unknown Week", // Safely handle weeks
+            progress.getOrNull(index)?.toFloat() ?: 0f // Safely handle progress
+        )
+    }
+}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DashboardUserScreen() {
+fun DashboardUserScreen(
+    track: String = "",
+    onUserClick: (Int, String) -> Unit,
+    onBack: () -> Unit,
+    onNavbar: (String) -> Unit,
+) {
     var selectedPage by remember { mutableStateOf(0) }
+    var firstYearData by remember { mutableStateOf(emptyList<Triple<String, String, Float>>()) }
+    var secondYearData by remember { mutableStateOf(emptyList<Triple<String, String, Float>>()) }
+    var thirdYearData by remember { mutableStateOf(emptyList<Triple<String, String, Float>>()) }
+    var fourthYearData by remember { mutableStateOf(emptyList<Triple<String, String, Float>>()) }
+
+    val db = FirebaseFirestore.getInstance()
+
+    LaunchedEffect(track) {
+        if (track.isNotEmpty()) {
+            db.collection(track)
+                .document("users")
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        // Safely retrieve and parse data
+                        firstYearData = parseFirestoreData(document, "n_1", "t_1", "p_1")
+                        secondYearData = parseFirestoreData(document, "n_2", "t_2", "p_2")
+                        thirdYearData = parseFirestoreData(document, "n_3", "t_3", "p_3")
+                        fourthYearData = parseFirestoreData(document, "n_4", "t_4", "p_4")
+                        Log.d("Firestore", "1st Year Data: $firstYearData")
+                        Log.d("Firestore", "2nd Year Data: $secondYearData")
+                        Log.d("Firestore", "3rd Year Data: $thirdYearData")
+                        Log.d("Firestore", "4th Year Data: $fourthYearData")
+                    } else {
+                        Log.d("Firestore", "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("Firestore", "Error fetching document", exception)
+                }
+        } else {
+            Log.w("Firestore", "Track is empty")
+        }
+    }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -46,26 +101,40 @@ fun DashboardUserScreen() {
                 ) {
                     NavigationBarItem(
                         selected = selectedPage == 0,
-                        onClick = { selectedPage = 0 },
+                        onClick = { selectedPage = 0;onNavbar("dashboard") },
                         label = { Text("Dashboard", color = Color.White) },
-                        icon = { Icon(Icons.Default.Home, contentDescription = "Home", tint = Color.White) },
+                        icon = {
+                            Icon(
+                                Icons.Default.Home,
+                                contentDescription = "Home",
+                                tint = if (selectedPage == 0) Color.Black else Color.White
+                            )
+                        },
                         colors = NavigationBarItemDefaults.colors(
-                            selectedIconColor = Color.White,
-                            unselectedIconColor = Color.Gray,
-                            selectedTextColor = Color.White,
-                            unselectedTextColor = Color.Gray
+                            selectedIconColor = Color.Black, // Black icon when selected
+                            unselectedIconColor = Color.Gray, // Gray icon when unselected
+                            selectedTextColor = Color.Black, // Black text when selected
+                            unselectedTextColor = Color.Gray, // Gray text when unselected
+                            indicatorColor = Color(0xFFFFC107) // Yellow highlight for the selected page
                         )
                     )
                     NavigationBarItem(
                         selected = selectedPage == 1,
-                        onClick = { selectedPage = 1 },
+                        onClick = { selectedPage = 1;onNavbar("updates") },
                         label = { Text("My Updates", color = Color.White) },
-                        icon = { Icon(Icons.Default.AccountCircle, contentDescription = "Updates", tint = Color.White) },
+                        icon = {
+                            Icon(
+                                Icons.Default.AccountCircle,
+                                contentDescription = "Updates",
+                                tint = if (selectedPage == 1) Color.Black else Color.White
+                            )
+                        },
                         colors = NavigationBarItemDefaults.colors(
-                            selectedIconColor = Color.White,
-                            unselectedIconColor = Color.Gray,
-                            selectedTextColor = Color.White,
-                            unselectedTextColor = Color.Gray
+                            selectedIconColor = Color.Black, // Black icon when selected
+                            unselectedIconColor = Color.Gray, // Gray icon when unselected
+                            selectedTextColor = Color.Black, // Black text when selected
+                            unselectedTextColor = Color.Gray, // Gray text when unselected
+                            indicatorColor = Color(0xFFFFC107) // Yellow highlight for the selected page
                         )
                     )
                 }
@@ -73,7 +142,16 @@ fun DashboardUserScreen() {
         },
         topBar = {
             TopAppBar(
-                title = { Text("Placeholder Track") },
+                title = { Text("$track Track") },
+                navigationIcon = {
+                    IconButton(onClick = { onBack() }) {
+                        Icon(
+                            imageVector = Icons.Default.Close, // The "X" icon
+                            contentDescription = "Close",
+                            tint = Color.White // Set the icon color
+                        )
+                    }
+                },
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFF232323),
                     titleContentColor = Color.White
@@ -90,40 +168,42 @@ fun DashboardUserScreen() {
                 .verticalScroll(rememberScrollState()) // Enable scrolling here
         ) {
             // Repeatable sections for each year
-            Section(title = "1st Years", items = listOf(
-                Triple("User 1", "Week 1", 0.8f),
-                Triple("User 2", "Week 1", 0.6f),
-                Triple("User 3", "Week 2", 0.5f),
-                Triple("User 4", "Week 3", 0.3f)
-            ))
-
-            Section(title = "2nd Years", items = listOf(
-                Triple("User 1", "Week 1", 0.8f),
-                Triple("User 2", "Week 1", 0.6f),
-                Triple("User 3", "Week 2", 0.5f),
-                Triple("User 4", "Week 3", 0.3f)
-            ))
-
-            Section(title = "3rd Years", items = listOf(
-                Triple("User 1", "Week 1", 0.8f),
-                Triple("User 2", "Week 1", 0.6f),
-                Triple("User 3", "Week 2", 0.5f),
-                Triple("User 4", "Week 3", 0.3f)
-            ))
-
-            Section(title = "4th Years", items = listOf(
-                Triple("User 1", "Week 1", 0.8f),
-                Triple("User 2", "Week 1", 0.6f),
-                Triple("User 3", "Week 2", 0.5f),
-                Triple("User 4", "Week 3", 0.3f)
-            ))
+            Section(
+                title = "1st Years",
+                items = firstYearData,
+                year = "1",
+                onUserClick = onUserClick
+            )
+            Section(
+                title = "2nd Years",
+                items = secondYearData,
+                year = "2",
+                onUserClick = onUserClick
+            )
+            Section(
+                title = "3rd Years",
+                items = thirdYearData,
+                year = "3",
+                onUserClick = onUserClick
+            )
+            Section(
+                title = "4th Years",
+                items = fourthYearData,
+                year = "4",
+                onUserClick = onUserClick
+            )
         }
     }
 }
 
 // Helper function for repeated sections
 @Composable
-fun Section(title: String, items: List<Triple<String, String, Float>>) {
+fun Section(
+    title: String,
+    items: List<Triple<String, String, Float>>,
+    year: String,
+    onUserClick: (Int, String) -> Unit
+) {
     Text(
         text = title,
         fontSize = 26.sp,
@@ -131,15 +211,17 @@ fun Section(title: String, items: List<Triple<String, String, Float>>) {
         color = Color.White,
         modifier = Modifier.padding(vertical = 20.dp)
     )
-    items.forEach { (name, work, progress) ->
+    items.forEachIndexed { index, (name, work, progress) ->
         UserView(
             name = name,
             workingon = work,
             progress = progress,
-            onClick = {}
+            onClick = { onUserClick(index, year) } // Pass index and year when clicked
         )
     }
 }
+
+// UserView Composable remains the same
 @Composable
 fun UserView(
     name: String,
@@ -196,7 +278,7 @@ fun UserView(
 
             // Progress bar
             LinearProgressIndicator(
-                progress = {progress},
+                progress = progress,
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(8.dp)
@@ -210,10 +292,4 @@ fun UserView(
             )
         }
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DashboardUserScreenPreview() {
-    DashboardUserScreen()
 }

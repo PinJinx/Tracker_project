@@ -21,10 +21,9 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Settings
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DashboardScreen() {
+fun DashboardScreen(onNavigateToUserActivity: () -> Unit,onNavbar: (String) -> Unit,setTrack: (String) -> Unit) {
     var selectedPage by remember { mutableStateOf(0) }
 
     Scaffold(
@@ -36,30 +35,44 @@ fun DashboardScreen() {
             ) {
                 NavigationBar(
                     modifier = Modifier.fillMaxWidth(),
-                    containerColor = Color(0xFF292929)  // Ensure the navigation bar's background is the same as the bottom bar
+                    containerColor = Color(0xFF292929)
                 ) {
                     NavigationBarItem(
                         selected = selectedPage == 0,
-                        onClick = { selectedPage = 0 },
-                        label = { Text("Dashboard", color = Color.White) },  // White text
-                        icon = { Icon(Icons.Default.Home, contentDescription = "Home", tint = Color.White) },  // White icon
+                        onClick = { selectedPage = 0;onNavbar("dashboard") },
+                        label = { Text("Dashboard", color = Color.White) },
+                        icon = {
+                            Icon(
+                                Icons.Default.Home,
+                                contentDescription = "Home",
+                                tint = if (selectedPage == 0) Color.Black else Color.White
+                            )
+                        },
                         colors = NavigationBarItemDefaults.colors(
-                            selectedIconColor = Color.White,
-                            unselectedIconColor = Color.Gray,
-                            selectedTextColor = Color.White,
-                            unselectedTextColor = Color.Gray
+                            selectedIconColor = Color.Black, // Black icon when selected
+                            unselectedIconColor = Color.Gray, // Gray icon when unselected
+                            selectedTextColor = Color.Black, // Black text when selected
+                            unselectedTextColor = Color.Gray, // Gray text when unselected
+                            indicatorColor = Color(0xFFFFC107) // Yellow highlight for the selected page
                         )
                     )
                     NavigationBarItem(
                         selected = selectedPage == 1,
-                        onClick = { selectedPage = 1 },
-                        label = { Text("My Updates", color = Color.White) },  // White text
-                        icon = { Icon(Icons.Default.AccountCircle, contentDescription = "Updates", tint = Color.White) },  // White icon
+                        onClick = { selectedPage = 1;onNavbar("updates") },
+                        label = { Text("My Updates", color = Color.White) },
+                        icon = {
+                            Icon(
+                                Icons.Default.AccountCircle,
+                                contentDescription = "Updates",
+                                tint = if (selectedPage == 1) Color.Black else Color.White
+                            )
+                        },
                         colors = NavigationBarItemDefaults.colors(
-                            selectedIconColor = Color.White,
-                            unselectedIconColor = Color.Gray,
-                            selectedTextColor = Color.White,
-                            unselectedTextColor = Color.Gray
+                            selectedIconColor = Color.Black, // Black icon when selected
+                            unselectedIconColor = Color.Gray, // Gray icon when unselected
+                            selectedTextColor = Color.Black, // Black text when selected
+                            unselectedTextColor = Color.Gray, // Gray text when unselected
+                            indicatorColor = Color(0xFFFFC107) // Yellow highlight for the selected page
                         )
                     )
                 }
@@ -71,9 +84,7 @@ fun DashboardScreen() {
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = Color(0xFF232323), titleContentColor = Color.White)
             )
         }
-
-    )
-    { padding ->
+    ) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -86,9 +97,10 @@ fun DashboardScreen() {
                 "Mobile" to android.R.drawable.ic_menu_gallery,
                 "AI" to android.R.drawable.ic_menu_gallery,
                 "Web" to android.R.drawable.ic_menu_gallery,
-                "Systems" to android.R.drawable.ic_menu_gallery
+                "System" to android.R.drawable.ic_menu_gallery
             )
-            // Display buttons in a grid layout
+
+            // Display buttons in a grid layout with modern styling
             Column {
                 tracks.chunked(2).forEach { rowItems ->
                     Row(
@@ -100,28 +112,29 @@ fun DashboardScreen() {
                                 text = text,
                                 imageRes = image,
                                 modifier = Modifier.weight(1f),
-                                onClick = { /* Handle Click */ }
+                                onClick = { onNavigateToUserActivity(); setTrack(text) } // Navigate to UserActivityScreen
                             )
                         }
                     }
                 }
             }
-
-            Row() {   }
         }
     }
 }
 
-
-
 @Composable
-fun DashboardButton(text: String, imageRes: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
+fun DashboardButton(
+    text: String,
+    imageRes: Int,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
     Card(
         modifier = modifier
             .padding(8.dp)
             .clickable { onClick() },
-        shape = RoundedCornerShape(12.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF292929))
+        shape = RoundedCornerShape(24.dp), // Rounded corners for modern style
+        colors = CardDefaults.cardColors(containerColor = Color(0xFFFFC107)) // Yellow background
     ) {
         Column(
             modifier = Modifier.padding(16.dp),
@@ -130,17 +143,18 @@ fun DashboardButton(text: String, imageRes: Int, modifier: Modifier = Modifier, 
             Image(
                 painter = painterResource(id = imageRes),
                 contentDescription = text,
-                modifier = Modifier.size(50.dp),
+                modifier = Modifier
+                    .size(50.dp)
+                    .padding(bottom = 8.dp),
                 contentScale = ContentScale.Fit
             )
-            Spacer(modifier = Modifier.height(8.dp))
-            Text(text, fontSize = 20.sp, fontWeight = FontWeight.Bold, color = Color.White)
+            Text(
+                text = text,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black // Black text for contrast
+            )
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun DashboardScreenPreview() {
-    DashboardScreen()
-}

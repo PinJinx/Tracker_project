@@ -1,4 +1,5 @@
 package com.example.curriculumtracker
+import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -24,23 +25,98 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.text.style.TextAlign
+import com.google.firebase.firestore.FirebaseFirestore
+import java.time.Year
+
+private fun parseFirestoreData(
+    document: com.google.firebase.firestore.DocumentSnapshot,
+    namesField: String,
+    weeksField: String,
+    progressField: String,
+    notesField: String
+): List<Quadruple<String, String, Float, String>> {
+    val names = (document.get(namesField) as? List<*>)?.filterIsInstance<String>() ?: emptyList()
+    val weeks = (document.get(weeksField) as? List<*>)?.filterIsInstance<Number>()?.map { "Week ${it.toInt()}" } ?: emptyList()
+    val progress = (document.get(progressField) as? List<*>)?.filterIsInstance<Number>()?.map { it.toFloat() } ?: emptyList()
+    val notes = (document.get(notesField) as? List<*>)?.filterIsInstance<String>() ?: emptyList()
+
+    return names.mapIndexed { index, name ->
+        Quadruple(
+            name,
+            weeks.getOrNull(index) ?: "Unknown Week", // Convert numeric weeks to "Week N"
+            progress.getOrNull(index) ?: 0f,         // Convert progress safely to Float
+            notes.getOrNull(index) ?: "No Note Available" // Include notes
+        )
+    }
+}
+
+// Helper class to return multiple values
+data class Quadruple<A, B, C, D>(
+    val first: A,
+    val second: B,
+    val third: C,
+    val fourth: D
+)
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserActivityScreen(
-    userName: String = "User Name",
-    userWeek: String = "Week 1",
+    track:String = "",
+    year: String = "",
+    index:Int = 0,
+    onBack: () -> Unit,
     statDate: String = "1-2-2024",
     dayspent: Int = 5,
-    progress: Float = .75f,
-    description: String = "This is a placeholder description. ".repeat(50), // Repeating placeholder for long text // Lambda to handle the back navigation
+    description: String = "This is a placeholder description. ".repeat(50),
 ) {
+    var userName by remember { mutableStateOf("") }
+    var userNotes by remember { mutableStateOf("") }
+    var userWeek by remember { mutableStateOf("") }
+    var progress by remember { mutableStateOf(0.75f) }
+    var Data by remember { mutableStateOf(emptyList<Triple<String, String, Float>>()) }
+    val db = FirebaseFirestore.getInstance()
+
+    // Fetch data from Firebase
+    LaunchedEffect(track) {
+        if (track.isNotEmpty() && year.isNotBlank()) {
+            db.collection(track)
+                .document("users")
+                .get()
+                .addOnSuccessListener { document ->
+                    if (document.exists()) {
+                        // Safely retrieve and parse data
+                        val Data = parseFirestoreData(document, "n_$year", "t_$year", "p_$year","nt_$year")
+                        Log.d("Firestore", "Data: $Data")
+
+                        // Retrieve the specific user's data based on the index
+                        if (index in Data.indices) {
+                            val userData = Data[index]
+                            userName = userData.first
+                            userWeek = userData.second
+                            progress = userData.third
+                            userNotes = userData.fourth
+                        } else {
+                            Log.w("Firestore", "Index out of bounds for Data list")
+                        }
+                    } else {
+                        Log.d("Firestore", "No such document")
+                    }
+                }
+                .addOnFailureListener { exception ->
+                    Log.e("Firestore", "Error fetching document", exception)
+                }
+        } else {
+            Log.w("Firestore", "Track or year is invalid")
+        }
+    }
+
     Scaffold(
         modifier = Modifier.fillMaxSize(),
         topBar = {
             TopAppBar(
                 title = { Text("User Activity") },
                 navigationIcon = {
-                    IconButton(onClick = {  }) {
+                    IconButton(onClick = { onBack() }) {
                         Icon(
                             imageVector = Icons.Default.Close, // The "X" icon
                             contentDescription = "Close",
@@ -140,7 +216,7 @@ fun UserActivityScreen(
                 modifier = Modifier.padding(bottom = 16.dp)
             )
             LinearProgressIndicator(
-                progress = progress,
+                progress = { progress },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(8.dp)
@@ -150,7 +226,7 @@ fun UserActivityScreen(
                     progress > 0.50f -> Color(0xFFFFC107) // Yellow
                     else -> Color(0xFFF44336) // Red
                 },
-                trackColor = Color(0xFF474747)
+                trackColor = Color(0xFF474747),
             )
 
             Spacer(Modifier.height(30.dp))
@@ -171,7 +247,7 @@ fun UserActivityScreen(
                     .verticalScroll(rememberScrollState())
             ) {
                 Text(
-                    text = description,
+                    text = if (userNotes.isEmpty()) "No Notes found.." else userNotes,
                     fontSize = 16.sp,
                     color = Color.Black // Black text color
                 )

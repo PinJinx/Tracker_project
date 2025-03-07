@@ -26,18 +26,20 @@ import androidx.compose.material.icons.filled.Close
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.VerticalAlignmentLine
 import androidx.compose.ui.text.style.TextAlign
-
-
+import com.google.firebase.auth.FirebaseAuth
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
+    onLoginSuccess: () -> Unit // Add this parameter for successful login callback
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
+    var errorMessage by remember { mutableStateOf("") } // For displaying error messages
+    val auth: FirebaseAuth = FirebaseAuth.getInstance()
 
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier.fillMaxSize()
     ) { padding ->
         Column(
             modifier = Modifier
@@ -48,7 +50,7 @@ fun LoginScreen(
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
+            // Title
             Row(
                 horizontalArrangement = Arrangement.Center,
                 modifier = Modifier.fillMaxWidth()
@@ -66,7 +68,8 @@ fun LoginScreen(
                     color = Color.White
                 )
             }
-                // Subtitle
+
+            // Subtitle
             Text(
                 text = "The place where your freedom begins",
                 fontSize = 16.sp,
@@ -94,7 +97,7 @@ fun LoginScreen(
                     cursorColor = Color(0xFFFFC107),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    containerColor = Color.Transparent,
+                    containerColor = Color.Transparent
                 )
             )
 
@@ -114,15 +117,39 @@ fun LoginScreen(
                     cursorColor = Color(0xFFFFC107),
                     focusedIndicatorColor = Color.Transparent,
                     unfocusedIndicatorColor = Color.Transparent,
-                    containerColor = Color.Transparent,
+                    containerColor = Color.Transparent
                 )
             )
 
-            Spacer(modifier = Modifier.height(40.dp))
+            Spacer(modifier = Modifier.height(20.dp))
+
+            // Error Message
+            if (errorMessage.isNotEmpty()) {
+                Text(
+                    text = errorMessage,
+                    color = Color.Red,
+                    fontSize = 14.sp,
+                    modifier = Modifier.padding(8.dp)
+                )
+            }
 
             // Login Button
             Button(
-                onClick = { },
+                onClick = {
+                    if (email.isNotBlank() && password.isNotBlank()) {
+                        auth.signInWithEmailAndPassword(email, password)
+                            .addOnCompleteListener { task ->
+                                if (task.isSuccessful) {
+                                    onLoginSuccess() // Call the successful login callback
+                                } else {
+                                    errorMessage =
+                                        task.exception?.message ?: "Login failed. Please try again."
+                                }
+                            }
+                    } else {
+                        errorMessage = "Please enter both email and password."
+                    }
+                },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp),
