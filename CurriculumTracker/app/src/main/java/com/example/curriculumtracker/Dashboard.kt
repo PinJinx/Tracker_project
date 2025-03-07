@@ -154,7 +154,7 @@ fun DashboardButton(
         )
         Text(
             text = text,
-            fontSize = 16.sp,
+            fontSize = 26.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White,
             modifier = Modifier.align(Alignment.Center)

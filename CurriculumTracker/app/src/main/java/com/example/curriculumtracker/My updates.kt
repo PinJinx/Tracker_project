@@ -28,12 +28,10 @@ fun UpdatePage(
 ) {
     val db = FirebaseFirestore.getInstance()
     var selectedPage by remember { mutableStateOf(1) }
-
     // UID and user data
     val uid = current_user?.uid
     var name by remember { mutableStateOf("") }
-    var year by remember { mutableStateOf("") } // Add state for year
-
+    var year by remember { mutableStateOf("") }
     // Fetch name and year from Firebase
     LaunchedEffect(uid) {
         if (uid != null) {
